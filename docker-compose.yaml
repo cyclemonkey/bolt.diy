@@ -7,7 +7,7 @@ services:
       target: bolt-ai-production
     ports:
       - '5173:5173'
-    env_file: 
+    env_file:
       - '.env'
       - '.env.local'
     environment:
@@ -33,6 +33,7 @@ services:
       - 'host.docker.internal:host-gateway'
     command: pnpm run dockerstart
     profiles:
+      - default
       - production
 
   app-dev:
